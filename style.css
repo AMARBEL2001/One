@@ -1,0 +1,158 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.5s ease;
+    overflow-x: hidden;
+}
+
+/* Cinematic Overlay */
+#cinema-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+#cinema-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cinema-content img {
+    width: 250px; /* Initial size of the image */
+    height: 250px; /* Ensure it remains a perfect circle */
+    border-radius: 50%; /* Make the image circular */
+    border: 5px solid #fff; /* Optional: Add a white border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Add a subtle shadow */
+}
+
+/* Header */
+header {
+    background-color: #333;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-direction: column; /* Stack items vertically */
+    top: -100px; /* Hide header initially */
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.header-content img {
+    width: 80px; /* Adjust the size of the header image */
+    height: 80px; /* Ensure it remains a perfect circle */
+    border-radius: 50%; /* Make the image circular */
+    border: 3px solid #fff; /* Optional: Add a white border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+    opacity: 0; /* Make the image invisible initially */
+    transition: opacity 1s ease; /* Smooth transition for opacity */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.jpg') no-repeat center center/cover; /* Replace with your background image */
+    color: #fff;
+    padding: 0; /* Remove padding */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+}
+
+.home-content {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+section {
+    padding: 100px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about, #projects, #contact {
+    background-color: #fff;
+}
+
+.project {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: background-color 0.5s ease;
+}
